@@ -4,9 +4,7 @@ export const runtime = "edge";
 
 export async function GET() {
   try {
-    // 绑定 fetch 到 globalThis
-    const boundFetch = fetch.bind(globalThis);
-    const response = await boundFetch(
+    const response = await fetch(
       "https://speedtest-api.pages.dev/speedtest"
     );
     const data = await response.json();
